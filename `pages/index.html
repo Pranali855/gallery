@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Image Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Responsive Image Gallery</h1>
+
+  <div class="filter-buttons">
+    <button onclick="filterImages('all')">All</button>
+    <button onclick="filterImages('nature')">Nature</button>
+    <button onclick="filterImages('city')">City</button>
+    <button onclick="filterImages('animals')">Animals</button>
+  </div>
+
+  <div class="gallery" id="gallery">
+    <img src="https://source.unsplash.com/600x400/?nature,water" data-category="nature" alt="Nature">
+    <img src="https://source.unsplash.com/600x400/?city,night" data-category="city" alt="City">
+    <img src="https://source.unsplash.com/600x400/?forest" data-category="nature" alt="Nature">
+    <img src="https://source.unsplash.com/600x400/?dog" data-category="animals" alt="Dog">
+    <img src="https://source.unsplash.com/600x400/?cat" data-category="animals" alt="Cat">
+    <img src="https://source.unsplash.com/600x400/?city,day" data-category="city" alt="City">
+    <img src="https://source.unsplash.com/600x400/?mountain" data-category="nature" alt="Mountain">
+    <img src="https://source.unsplash.com/600x400/?elephant" data-category="animals" alt="Elephant">
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <span class="nav prev" onclick="changeImage(-1)">&#10094;</span>
+    <img id="lightbox-img" src="" alt="">
+    <span class="nav next" onclick="changeImage(1)">&#10095;</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
