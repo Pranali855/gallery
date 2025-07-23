@@ -18,6 +18,10 @@
   </div>
 
   <div class="gallery" id="gallery">
+    <div class="nav-buttons">
+      <button id="prev">&#8592; Previous</button>
+      <button id="next">Next &#8594;</button>
+    </div>
     <img src="https://media.istockphoto.com/id/1450272068/photo/wind-sun-and-water-energy.jpg?b=1&s=612x612&w=0&k=20&c=kqzh30craD6AVukqNYdkovgcP4gxV3QN6lgs07b1YUg=" data-category="nature" alt="Nature">
     <img src="https://media.istockphoto.com/id/1322277517/photo/wild-grass-in-the-mountains-at-sunset.jpg?b=1&s=612x612&w=0&k=20&c=rYGTdPmOi8IHTxUgTcj2kGjGlOJaZBLg3WhKXHAi400=" data-category="city" alt="City">
     <img src="./images/airoplane.jpg" data-category="nature" alt="Nature">
@@ -45,6 +49,27 @@
     <img id="lightbox-img" src="" alt="">
     <span class="nav next" onclick="changeImage(1)">&#10095;</span>
   </div>
+  <script>
+  let currentIndex = 0;
+    const mainImage = document.getElementById('main-image');
+
+    function showImage(index) {
+      mainImage.classList.remove('fade-in');
+      void mainImage.offsetWidth; // restart animation
+      mainImage.src = images[index];
+      mainImage.classList.add('fade-in');
+    }
+
+    document.getElementById('prev').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    });
+
+    document.getElementById('next').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    });
+  </script>
 
   <script src="./script.js"></script>
 </body>
