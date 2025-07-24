@@ -19,9 +19,9 @@ h1 {
   padding: 10px 15px;
   margin: 5px;
   border: none;
-  border-radius: 5px;
-  background-color: #333;
-  color: white;
+  border-color: #333333b7 ;
+  border-radius: 3%;
+  color:black;
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -37,15 +37,14 @@ h1 {
 }
 
 .gallery img {
-  width: 220px;
-  height: 200px;
+  width: 310px;
+  height: 290px;
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
   display: block;
   object-fit: cover;
-  overflow: hidden;
-
+  
 }
 
 .gallery img:hover {
